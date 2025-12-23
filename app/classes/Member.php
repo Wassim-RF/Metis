@@ -1,5 +1,6 @@
 <?php
-
+    namespace App\Classes;
+    
 class Member {
     private ?int $id = null;
     private string $name;

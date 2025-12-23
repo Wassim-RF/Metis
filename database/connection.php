@@ -1,4 +1,8 @@
 <?php
+    namespace Database;
+
+    use PDO;
+    use PDOException;
 
     class DataBase {
         private string $db_host = "127.0.0.1";

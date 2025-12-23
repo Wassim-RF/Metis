@@ -1,4 +1,7 @@
 <?php 
+    namespace App\Classes;
+
+    use DateTime;
 
     class Activite {
         private ?int $id = null;
