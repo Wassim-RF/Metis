@@ -1,6 +1,6 @@
 <?php
 
-    class ProjetCourt extends Projet {
+    class ProjetCourt extends Project {
         public function getType() {
             return 'Court';
         }

@@ -1,6 +1,6 @@
 <?php
 
-    class Projet {
+    class Project {
         private ?int $id = null;
         private string $titre;
         private DateTime $creationDate;
@@ -14,13 +14,13 @@
             $this->type = $type;
             $this->duration = $duration;
             $this->budget = $budget;
-            $this->memberId = $member_id;
+            $this->member_id = $member_id;
             $this->creationDate = new DateTime();
         }
-        public function getId(): ?int {
+        public function getId() {
             return $this->id;
         }
-        public function setId(int $id): void {
+        public function setId(int $id) {
             $this->id = $id;
         }
         public function getTitle() {
