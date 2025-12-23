@@ -1,39 +1,11 @@
 <?php
+    try {
+        $dsn = "mysql:host=127.0.0.1;dbname=metis;port=3306;charset=utf8";
+        $pdo = new PDO($dsn, 'root', 1980);
 
-class Member {
-    private ?int $id = null;
-    private string $name;
-    private string $email;
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    public function __construct(string $name, string $email) {
-        $this->name  = $name;
-        $this->email = $email;
+    } catch (PDOException $e) {
+        die("Connection failed: " . $e->getMessage());
     }
-    public function setId(int $id): void {
-        $this->id = $id;
-    }
-    public function getId(): ?int {
-        return $this->id;
-    }
-    public function getMember(): array {
-        return [
-            'id'    => $this->id,
-            'name'  => $this->name,
-            'email' => $this->email
-        ];
-    }
-    public function getName(): string {
-        return $this->name;
-    }
-    public function setName(string $name): void {
-        $this->name = $name;
-    }
-    public function getEmail(): string {
-        return $this->email;
-    }
-    public function setEmail(string $email): void {
-        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $this->email = $email;
-        }
-    }
-}

@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS members (
 CREATE TABLE IF NOT EXISTS projects (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(150) NOT NULL,
-    creation_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    creation_date DATETIME NOT NULL,
     duration VARCHAR(50),
     budget DECIMAL(10,2),
     member_id INT NOT NULL,
@@ -25,4 +25,8 @@ CREATE TABLE activities (
     project_id INT NOT NULL,
 
     FOREIGN KEY (project_id) REFERENCES projects(id)
-)
+);
+
+--@block
+DROP TABLE activities;
+DROP TABLE projects
