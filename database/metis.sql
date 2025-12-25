@@ -26,5 +26,4 @@ CREATE TABLE activities (
 );
 
 --@block
-DROP TABLE activities;
-DROP TABLE projects
+SELECT * FROM members WHERE id = 1;
