@@ -7,8 +7,8 @@ class Member {
     private string $email;
 
     public function __construct(string $name, string $email) {
-        $this->name  = $name;
-        $this->email = $email;
+        $this->setName($name);
+        $this->setEmail($email);
     }
     public function setId(int $id): void {
         $this->id = $id;
@@ -27,6 +27,9 @@ class Member {
         return $this->name;
     }
     public function setName(string $name): void {
+        if (empty($name)) {
+            echo "Le nom est obligatoir.\n";
+        }
         $this->name = $name;
     }
     public function getEmail(): string {
@@ -35,6 +38,8 @@ class Member {
     public function setEmail(string $email): void {
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $this->email = $email;
+        } else {
+            echo "Entrer un email valider.\n";
         }
     }
 }
