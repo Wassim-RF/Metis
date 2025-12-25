@@ -6,7 +6,6 @@
     class Project {
         private ?int $id = null;
         private string $titre;
-        private DateTime $creationDate;
         private string $type;
         private string $duration;
         private float $budget;

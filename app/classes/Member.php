@@ -10,32 +10,32 @@ class Member {
         $this->setName($name);
         $this->setEmail($email);
     }
-    public function setId(int $id): void {
+    public function setId(int $id) {
         $this->id = $id;
     }
-    public function getId(): ?int {
+    public function getId() {
         return $this->id;
     }
-    public function getMember(): array {
+    public function getMember() {
         return [
             'id'    => $this->id,
             'name'  => $this->name,
             'email' => $this->email
         ];
     }
-    public function getName(): string {
+    public function getName() {
         return $this->name;
     }
-    public function setName(string $name): void {
+    public function setName(string $name) {
         if (empty($name)) {
             echo "Le nom est obligatoir.\n";
         }
         $this->name = $name;
     }
-    public function getEmail(): string {
+    public function getEmail() {
         return $this->email;
     }
-    public function setEmail(string $email): void {
+    public function setEmail(string $email) {
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $this->email = $email;
         } else {

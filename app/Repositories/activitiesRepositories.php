@@ -20,4 +20,34 @@
                 'project_id' => $activite->getProjectId()
             ]);
         }
+        public function findAll() {
+            $sql = "SELECT * FROM activities";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $activities[] = new Activite(
+                    $row['description'],
+                    $row['description']
+                );
+            }
+            return $activities;
+        }
+        public function update(Activite $activite): bool {
+            $sql = "UPDATE activities SET description = :description , project_id = :project_id WHERE id = :id";
+            $stmt = $this->pdo->prepare($sql);
+
+            return $stmt->execute([
+                'description'   => $activite->getDescription(),
+                'project_id' => $activite->getProjectId(),
+                'id' => $activite->getId()
+            ]);
+        }
+
+        public function delete(int $id): bool {
+            $sql = "DELETE FROM activities WHERE id = :id";
+            $stmt = $this->pdo->prepare($sql);
+
+            return $stmt->execute(['id' => $id]);
+        }
     }

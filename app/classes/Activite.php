@@ -6,7 +6,6 @@
     class Activite {
         private ?int $id = null;
         private string $description;
-        private DateTime $creationDate;
         private int $project_id;
 
         public function __construct(string $description , int $project_id) {
