@@ -43,7 +43,11 @@
 
             case 3:
                 require 'views/activitie/menuP.php';
-                switch ($aChoix) {}
+                switch ($aChoix) {
+                    case 1:
+                        require 'views/activitie/ajouteActivitie.php';
+                        break;
+                }
                 break;
 
             case 0:

@@ -15,11 +15,14 @@
         public function createActivitie(Activite $activite) {
             $sql = "INSERT INTO activities (description , project_id) VALUES (:description , :project_id)";
             $stmt = $this->pdo->prepare($sql);
-            return $stmt->execute([
+            $stmt->execute([
                 'description' => $activite->getDescription(),
                 'project_id' => $activite->getProjectId()
             ]);
-        }
+            $id = (int) $this->pdo->lastInsertId();
+            $activite->setId($id);
+            return $activite;
+        } 
         public function findAll() {
             $sql = "SELECT * FROM activities";
             $stmt = $this->pdo->prepare($sql);

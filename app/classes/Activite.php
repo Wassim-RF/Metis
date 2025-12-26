@@ -10,7 +10,6 @@
 
         public function __construct(string $description , int $project_id) {
             $this->description = $description;
-            $this->creationDate = new DateTime();
             $this->project_id = $project_id;
         }
         public function getId() {
@@ -30,5 +29,5 @@
         }
         public function setPrjectId(int $project_id) {
             $this->project_id = $project_id;
-        }
+        } 
     }
