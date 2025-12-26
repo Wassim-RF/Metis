@@ -29,11 +29,21 @@
                     case 1:
                         require 'views/project/ajouteProject.php';
                         break;
+                    case 2:
+                        require 'views/project/deleteProject.php';
+                        break;
+                    case 3:
+                        require 'views/project/affichezToutPtoject.php';
+                        break;
+                    default:
+                        echo "Votre choix n'existe pas.\n";
+                        break;
                 }
                 break;
 
             case 3:
-                echo 3 . "\n";
+                require 'views/activitie/menuP.php';
+                switch ($aChoix) {}
                 break;
 
             case 0:

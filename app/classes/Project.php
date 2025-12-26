@@ -8,13 +8,11 @@
         protected string $titre;
         protected float $budget;
         protected int $member_id;
-        protected DateTime $creationDate;
 
         public function __construct(string $titre, float $budget, int $member_id) {
             $this->titre = $titre;
             $this->budget = $budget;
             $this->member_id = $member_id;
-            $this->creationDate = new DateTime();
         }
         public function getId() {
             return $this->id;

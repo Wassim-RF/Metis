@@ -25,4 +25,12 @@
 
             return $this->projectRepositories->addProject($project);
         }
+
+        public function deleteProject(int $id){
+            $this->projectRepositories->deleteProject($id);
+        }
+
+        public function showAllProject() {
+            return $this->projectRepositories->affichezToutProject();
+        }
     }
