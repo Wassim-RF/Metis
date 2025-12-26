@@ -24,7 +24,12 @@
                 break;
 
             case 2:
-                echo 2 . "\n";
+                require 'views/project/menuP.php';
+                switch ($pChoix) {
+                    case 1:
+                        require 'views/project/ajouteProject.php';
+                        break;
+                }
                 break;
 
             case 3:

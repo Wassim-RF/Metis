@@ -1,10 +1,8 @@
 <?php
-    namespace App\Classes;
+namespace App\Classes;
 
-    use DateTime;
-
-    class ProjetLong extends Project {
-        public function getType() {
-            return ;
-        }
+class ProjetLong extends Project {
+    public function getType() {
+        return 'long';
     }
+}
